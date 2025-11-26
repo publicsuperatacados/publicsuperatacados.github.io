@@ -20,23 +20,28 @@
 
 
 	// Menu elevator animation
-	$('a[href*=\\#]:not([href=\\#])').on('click', function() {
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			if (target.length) {
-				var width = $(window).width();
-				if(width < 991) {
-					$('.menu-trigger').removeClass('active');
-					$('.header-area .nav').slideUp(200);	
-				}				
-				$('html,body').animate({
-					scrollTop: (target.offset().top) - 130
-				}, 700);
-				return false;
-			}
-		}
-	});
+$('a[href*=\\#]:not([href=\\#])').on('click', function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+            var width = $(window).width();
+            if(width < 991) {
+                $('.menu-trigger').removeClass('active');
+                $('.header-area .nav').slideUp(200);	
+            }				
+            $('html,body').animate({
+                scrollTop: (target.offset().top) - 130
+            }, 700, function() { // Adicione esta função de callback
+                // Após a animação, atualize o hash da URL
+                // 'this.hash' já contém a string correta (ex: '#sobre')
+                window.location.hash = this.hash;
+            }.bind(this)); // '.bind(this)' é crucial aqui para 'this' se referir ao link original
+
+            return false; // Mantenha este 'return false' para evitar o salto imediato e permitir a animação
+        }
+    }
+});
 
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
