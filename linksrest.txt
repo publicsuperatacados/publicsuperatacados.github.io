@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Restaurantes | Links Essenciais</title>
+    <meta name="description" content="Acesse todos os links importantes do Public Restaurantes em um só lugar: Cardápio, Reservas, Redes Sociais e mais!">
+    <meta property="og:title" content="Public Restaurantes | Links Essenciais">
+    <meta property="og:description" content="Acesse todos os links importantes do Public Restaurantes em um só lugar.">
+    <meta property="og:image" content="assets/images/logo-restaurantes.png"> <meta property="og:url" content="https://public.com.br/links-restaurantes.html"> <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favico/favicon-32x32.png"> <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%); /* Um gradiente mais quente para restaurante */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            box-sizing: border-box;
+        }
+        .container-linktree {
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            margin-bottom: 25px;
+        }
+        .logo img {
+            max-width: 200px; /* Ajuste o tamanho do logo conforme necessário */
+            height: auto;
+        }
+        /* Placeholder para o logo se a imagem não estiver disponível ou for texto */
+        .logo .text-logo {
+            font-size: 2.5em;
+            font-weight: 900;
+            color: #d14905; /* Um vermelho/laranja mais forte para o logo do restaurante */
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #d14905; /* Cor principal para títulos */
+        }
+        p {
+            font-size: 1em;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            color: #555;
+        }
+        .link-button {
+            display: block;
+            width: 90%;
+            padding: 15px 20px;
+            margin: 15px auto;
+            background-color: #f8b500; /* Laranja/amarelo vibrante para botões */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
