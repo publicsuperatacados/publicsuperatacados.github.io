@@ -1722,7 +1722,79 @@ preloader
   -webkit-animation-delay: 0.66666s;
   animation-delay: 0.66666s;
 }
+/* Estilos para o Pop-up Canais Oficiais */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro semi-transparente */
+    display: flex; /* Para centralizar o conteúdo */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Garante que o pop-up fique acima de tudo */
+    opacity: 0; /* Começa invisível */
+    visibility: hidden; /* Começa escondido */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
+.popup-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 10px; /* Um pequeno padding para o fundo branco */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 90%; /* Limita a largura do pop-up */
+    max-height: 90vh; /* Limita a altura do pop-up (90% da altura da viewport) */
+    overflow: auto; /* Adiciona scroll se a imagem for muito grande */
+    text-align: center; /* Centraliza a imagem se ela for menor que o container */
+}
+
+.popup-image {
+    max-width: 100%; /* Garante que a imagem se ajuste ao conteúdo do pop-up */
+    height: auto;
+    display: block; /* Remove espaços extras abaixo da imagem */
+    border-radius: 4px; /* Pequenas bordas arredondadas para a imagem */
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    line-height: 1; /* Alinha o "x" verticalmente */
+    padding: 5px;
+    background: none; /* Remove background padrão de botões */
+    border: none; /* Remove borda padrão de botões */
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #f77f9e; /* Cor de hover para o botão fechar */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Opcional: Para telas menores, você pode querer o pop-up um pouco mais estreito */
+@media (max-width: 768px) {
+    .popup-content {
+        padding: 5px;
+    }
+    .close-button {
+        top: 0px;
+        right: 10px;
+        font-size: 24px;
+    }
+}
 @-webkit-keyframes jumper {
   0% {
     opacity: 0;

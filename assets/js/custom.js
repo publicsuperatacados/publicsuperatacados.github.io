@@ -17,7 +17,45 @@
 			$('.header-area .nav').slideToggle(200);
 		});
 	}
+// Script para o Pop-up Canais Oficiais
+$(document).ready(function() {
+    var popupCanais = $('#popup-canais');
+    var closeButton = popupCanais.find('.close-button');
 
+    // Função para abrir o pop-up
+    function openPopup() {
+        popupCanais.addClass('show');
+    }
+
+    // Função para fechar o pop-up
+    function closePopup() {
+        popupCanais.removeClass('show');
+    }
+
+    // Abre o pop-up automaticamente ao carregar a página
+    openPopup();
+
+    // Fecha o pop-up ao clicar no botão de fechar
+    closeButton.on('click', function() {
+        closePopup();
+    });
+
+    // Fecha o pop-up ao clicar fora do conteúdo do pop-up (no fundo escuro)
+    popupCanais.on('click', function(event) {
+        if ($(event.target).is(popupCanais)) {
+            closePopup();
+        }
+    });
+
+    // Opcional: Fecha o pop-up ao pressionar a tecla ESC
+    $(document).on('keydown', function(event) {
+        if (event.key === 'Escape' || event.keyCode === 27) {
+            if (popupCanais.hasClass('show')) {
+                closePopup();
+            }
+        }
+    });
+});
 
 	// Menu elevator animation
 $('a[href*=\\#]:not([href=\\#])').on('click', function() {
