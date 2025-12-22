@@ -757,7 +757,75 @@ welcome
     margin-bottom: 40px;
   }
 }
+/* 
+---------------------------------------------
+Cartão
+--------------------------------------------- 
+*/
 
+.banner-container {
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    background-image: url('assets/images/seu-arquivo-de-banner.png'); /* Caminho da imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 10%;
+    border-radius: 0 0 50px 50px; /* Efeito arredondado da base */
+}
+
+.banner-content {
+    max-width: 500px;
+    color: #ffffff;
+    z-index: 2;
+}
+
+.banner-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f8b500; /* Amarelo/Dourado do Cartão Public */
+    margin-bottom: 15px;
+    text-transform: none;
+}
+
+.banner-text {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.banner-button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: #f8b500;
+    color: #1a2a6b; /* Azul marinho para contraste */
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.banner-button:hover {
+    background-color: #ffffff;
+    color: #1a2a6b;
+    transform: translateY(-3px);
+}
+
+/* Responsividade para Celulares */
+@media (max-width: 768px) {
+    .banner-container {
+        padding: 40px 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    .banner-title {
+        font-size: 2.2rem;
+    }
+}
 
 /* 
 ---------------------------------------------
