@@ -757,68 +757,134 @@ welcome
     margin-bottom: 40px;
   }
 }
-/* 
----------------------------------------------
-Cartão
---------------------------------------------- 
-*/
+/* --- Bloco Banner Cartão Public --- */
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    min-height: 500px; /* Altura mínima do banner */
+    
+    /* Chamada da imagem de fundo */
+    background-image: url('../images/banner-bg.png'); 
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    padding: 60px 10%;
+    border-radius: 0 0 50px 50px; /* Arredondamento inferior */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Camada de brilho/escurecimento para garantir leitura do texto */
+.banner-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Escurece levemente a imagem */
+    z-index: -1;
+}
+
+.banner-content {
+    max-width: 600px;
+    color: #ffffff;
+}
+
+.banner-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #f8b500; /* Amarelo/Dourado Public */
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.banner-text {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    color: #ffffff;
+}
 
 /* Container dos botões */
 .banner-actions {
     display: flex;
-    gap: 15px; /* Espaço entre os botões */
-    flex-wrap: wrap; /* Quebra linha no mobile se não couber */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 /* Estilo Base dos Botões */
 .banner-button {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 15px 30px;
     border-radius: 30px;
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.3s ease;
     font-size: 1rem;
-    border: 2px solid #f8b500; /* Borda padrão amarela */
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-/* Botão Preenchido (WhatsApp) */
+/* Botão Peça pelo WhatsApp (Preenchido) */
 .btn-filled {
     background-color: #f8b500;
     color: #1a2a6b;
+    border: 2px solid #f8b500;
 }
 
 .btn-filled:hover {
     background-color: #ffffff;
     border-color: #ffffff;
+    color: #1a2a6b;
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Botão com Contorno (Saiba Mais) */
+/* Botão Saiba Mais (Apenas contorno/outline) */
 .btn-outline {
     background-color: transparent;
     color: #ffffff;
-    border-color: #ffffff; /* Contorno branco para destacar no fundo azul */
+    border: 2px solid #ffffff;
 }
 
 .btn-outline:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: #f8b500;
-    color: #f8b500;
+    background-color: #ffffff;
+    color: #1a2a6b;
     transform: translateY(-3px);
 }
 
-/* Ajuste Mobile */
-@media (max-width: 768px) {
-    .banner-actions {
-        justify-content: center;
-    }
-    .banner-button {
-        width: 100%; /* Botões ocupam a largura total no celular */
-        max-width: 280px;
+/* --- Responsividade (Mobile) --- */
+
+@media (max-width: 991px) {
+    .banner-title {
+        font-size: 2.5rem;
     }
 }
-/* 
+
+@media (max-width: 767px) {
+    .banner-container {
+        padding: 80px 20px;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .banner-actions {
+        justify-content: center;
+        flex-direction: column; /* Botões um sobre o outro no celular */
+    }
+    
+    .banner-button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .banner-title {
+        font-size: 2.2rem;
+    }
+}
 ---------------------------------------------
 features
 --------------------------------------------- 
