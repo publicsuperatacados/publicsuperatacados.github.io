@@ -122,8 +122,8 @@ body {
 
 .section {
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 80px;
+  padding-top: 50px !important;
+  padding-bottom: 40px !important;
 }
 
 .section.colored {
