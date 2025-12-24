@@ -162,7 +162,7 @@ body {
   color: #1e1e1e;
   letter-spacing: 1.75px;
   line-height: 38px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .center-heading.colored .section-title {
@@ -176,7 +176,7 @@ body {
   color: #777;
   line-height: 28px;
   letter-spacing: 1px;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .center-text.colored {
@@ -210,16 +210,16 @@ body {
 }
 
 .padding-bottom-top-60 {
-  padding-top: 60px !important;
-  padding-bottom: 60px !important;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
 }
 
 .padding-bottom-80 {
-  padding-bottom: 80px !important;
+  padding-bottom: 40px !important;
 }
 
 .padding-bottom-100 {
-  padding-bottom: 100px !important;
+  padding-bottom: 50px !important;
 }
 
 .border-bottom {
@@ -253,7 +253,7 @@ body {
 }
 
 .padding-top-70 {
-  padding-top: 70px !important;
+  padding-top: 30px !important;
 }
 
 .padding-top-20 {
@@ -297,7 +297,7 @@ body {
     overflow-x: hidden;
   }
   .mobile-top-fix {
-    margin-top: 30px;
+    margin-top: 15px;
     margin-bottom: 0px;
   }
   .mobile-bottom-fix {
